@@ -1,0 +1,444 @@
+/* BODY */
+
+body {
+
+  margin: 0;
+
+  height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-family: 'Segoe UI', sans-serif;
+
+  background:
+    linear-gradient(
+      135deg,
+      #050816,
+      #0b1b34,
+      #120c2e
+    );
+}
+
+/* FONDO PARTICLES */
+
+#particles-js {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: -10;
+}
+
+/* NEBULOSAS */
+
+.nebulosa {
+
+  position: fixed;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  opacity: 0.25;
+
+  animation:
+    moverNebulosa 20s infinite alternate;
+}
+
+.nebulosa1 {
+
+  background: purple;
+
+  top: -100px;
+  left: -100px;
+}
+
+.nebulosa2 {
+
+  background: cyan;
+
+  bottom: -150px;
+  right: -100px;
+}
+
+@keyframes moverNebulosa {
+
+  from {
+
+    transform:
+      scale(1)
+      translateY(0);
+  }
+
+  to {
+
+    transform:
+      scale(1.2)
+      translateY(40px);
+  }
+}
+
+/* LUNA */
+
+.luna {
+
+  position: fixed;
+
+  top: 70px;
+  right: 120px;
+
+  width: 140px;
+  height: 140px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #fff,
+      #ddd,
+      #aaa
+    );
+
+  box-shadow:
+    0 0 50px white,
+    0 0 120px rgba(255,255,255,0.7);
+
+  animation:
+    brilloLuna 4s ease-in-out infinite;
+}
+
+@keyframes brilloLuna {
+
+  50% {
+
+    box-shadow:
+      0 0 80px white,
+      0 0 160px rgba(255,255,255,0.9);
+  }
+}
+
+/* PLANETAS */
+
+.planeta {
+
+  position: fixed;
+
+  border-radius: 50%;
+
+  opacity: 0.8;
+}
+
+.planeta1 {
+
+  width: 90px;
+  height: 90px;
+
+  background:
+    linear-gradient(
+      orange,
+      red
+    );
+
+  bottom: 100px;
+  left: 100px;
+
+  animation:
+    girar 15s linear infinite;
+}
+
+.planeta2 {
+
+  width: 60px;
+  height: 60px;
+
+  background:
+    linear-gradient(
+      cyan,
+      blue
+    );
+
+  top: 200px;
+  left: 250px;
+
+  animation:
+    girar 10s linear infinite reverse;
+}
+
+@keyframes girar {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* TARJETA */
+
+.card {
+
+  position: relative;
+
+  z-index: 5;
+
+  width: 340px;
+
+  padding: 35px;
+
+  border-radius: 30px;
+
+  text-align: center;
+
+  color: white;
+
+  background:
+    rgba(255,255,255,0.12);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* TEXTO */
+
+h1, p {
+
+  color: white;
+}
+
+/* BOTÓN */
+
+button {
+
+  margin-top: 20px;
+
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #ff6f91;
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+
+  transform: scale(1.08);
+
+  background: #ff4f7b;
+}
+
+/* MUÑEQUITA */
+
+.anime-girl {
+
+  position: fixed;
+
+  bottom: 0;
+
+  right: 50px;
+
+  width: 320px;
+
+  z-index: 2;
+
+  border-radius: 20px;
+
+  filter:
+    drop-shadow(
+      0 0 20px rgba(255,255,255,0.3)
+    );
+}
+
+/* ESTRELLAS */
+
+.estrella {
+
+  position: fixed;
+
+  width: 2px;
+  height: 2px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  animation:
+    parpadear 2s infinite;
+}
+
+@keyframes parpadear {
+
+  50% {
+
+    opacity: 0.2;
+
+    transform: scale(0.5);
+  }
+}
+
+/* ESTRELLAS FUGACES */
+
+.estrella-fugaz {
+
+  position: fixed;
+
+  width: 250px;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      white,
+      transparent
+    );
+
+  border-radius: 999px;
+
+  transform: rotate(-25deg);
+
+  animation:
+    fugaz 2s linear forwards;
+}
+
+@keyframes fugaz {
+
+  from {
+
+    transform:
+      translate(0,0)
+      rotate(-25deg);
+
+    opacity: 1;
+  }
+
+  to {
+
+    transform:
+      translate(1400px,700px)
+      rotate(-25deg);
+
+    opacity: 0;
+  }
+}
+
+/* LLUVIA DE ESTRELLAS */
+
+.lluvia-estrella {
+
+  position: fixed;
+
+  width: 220px;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      white,
+      cyan,
+      transparent
+    );
+
+  border-radius: 999px;
+
+  pointer-events: none;
+
+  opacity: 0.9;
+
+  transform: rotate(125deg);
+
+  box-shadow:
+    0 0 20px white,
+    0 0 40px cyan;
+
+  animation:
+    caerEstrella 3s linear forwards;
+}
+
+@keyframes caerEstrella {
+
+  from {
+
+    transform:
+      translate(0,0)
+      rotate(125deg);
+
+    opacity: 1;
+  }
+
+  to {
+
+    transform:
+      translate(-1200px,1200px)
+      rotate(125deg);
+
+    opacity: 0;
+  }
+}
+
+/* LUNA MODO ÉPICO */
+
+.luna.epica {
+
+  animation:
+    brilloEpico 2s ease-in-out infinite;
+}
+
+@keyframes brilloEpico {
+
+  50% {
+
+    box-shadow:
+      0 0 120px white,
+      0 0 250px cyan,
+      0 0 350px blue;
+  }
+}
+
+/* PARTÍCULAS AZULES */
+
+.particula-azul {
+
+  position: fixed;
+
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: cyan;
+
+  box-shadow:
+    0 0 15px cyan;
+
+  pointer-events: none;
+}
