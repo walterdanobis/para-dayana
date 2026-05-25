@@ -444,80 +444,82 @@ button:hover {
 }
 
 /* =======================================================
-   RESPONSIVO: Ajustes especiales para Celulares (Mobile) - CORREGIDO
+   RESPONSIVO: Ajustes especiales para Celulares (Mobile)
    ======================================================= */
 @media (max-width: 768px) {
     
     body {
         overflow-x: hidden;
-        /* Cambiamos a columna para que la imagen y la tarjeta se apilen una abajo de la otra */
         display: flex;
         flex-direction: column; 
-        justify-content: center;
+        /* Alinea los elementos hacia arriba para que el cuadro quede arriba */
+        justify-content: flex-start; 
         align-items: center;
-        height: auto; /* Permite que la pantalla crezca a lo alto si es necesario */
+        height: auto; 
         min-height: 100vh;
-        padding: 20px 10px;
+        /* Un poco de espacio arriba para que no pegue al borde de la pantalla */
+        padding: 80px 15px 20px 15px; 
         box-sizing: border-box;
     }
 
-    /* --- Ajuste de la Tarjeta --- */
+    /* --- Ajuste de la Tarjeta (Más pequeña y arriba) --- */
     .card {
-        width: 90% !important; 
-        max-width: 350px;
-        margin: 10px auto; 
-        padding: 25px 20px !important; 
+        width: 85% !important; /* Más angosta */
+        max-width: 320px;
+        margin: 0 auto 20px auto; /* Centrada y con margen abajo */
+        padding: 18px !important; /* Menos espacio interno para que sea compacta */
         box-sizing: border-box;
-        /* Nos aseguramos de que la tarjeta se renderice por encima de las estrellas */
         z-index: 10 !important; 
     }
 
     .card h1 {
-        font-size: 1.8rem !important; 
-        margin-bottom: 10px;
+        font-size: 1.5rem !important; /* Título más pequeño */
+        margin-top: 0;
+        margin-bottom: 8px;
     }
 
     .card p {
-        font-size: 0.95rem !important; 
-        line-height: 1.5; 
+        font-size: 0.85rem !important; /* Texto más compacto y legible */
+        line-height: 1.4; 
+        margin-bottom: 12px;
     }
 
     .card button {
         width: 100%; 
-        padding: 12px 20px !important;
-        font-size: 1rem !important;
+        padding: 10px 15px !important; /* Botón más estilizado */
+        font-size: 0.9rem !important;
+        margin-top: 5px;
     }
 
-    /* --- Ajuste de la Imagen (Anime-girl) --- */
+    /* --- Ajuste de la Imagen (Más grande y abajo) --- */
     .anime-girl {
-        width: 140px !important; /* Un tamaño ideal para pantallas chicas */
+        width: 220px !important; /* ¡Ahora se ve mucho más! */
         height: auto !important;
-        /* La cambiamos a absolute pero fija abajo a la derecha de forma sutil 
-           para que no estorbe la lectura de la tarjeta */
-        position: absolute !important; 
-        bottom: 10px !important;
-        right: 10px !important;
-        opacity: 0.4; /* Le bajamos un poco la opacidad para que actúe como fondo y no tape el texto */
-        z-index: 1 !important;
+        position: fixed !important; /* Se queda fija abajo */
+        bottom: 0 !important;
+        right: 50%; /* Truco para centrarla perfectamente abajo */
+        transform: translateX(50%); 
+        opacity: 1 !important; /* Recupera todo su color para que se vea bien */
+        z-index: 2 !important;
+        pointer-events: none; /* Evita que estorbe si intentas dar clic cerca */
     }
 
     /* --- Ajustes de Elementos del Fondo (Luna y Planetas) --- */
     .luna {
-        width: 70px !important;
-        height: 70px !important;
-        top: 20px !important;
-        right: 20px !important;
+        width: 65px !important;
+        height: 65px !important;
+        top: 15px !important;
+        right: 15px !important;
     }
 
     .planeta1 {
-        width: 45px !important;
-        height: 45px !important;
-        bottom: 40px !important;
-        left: 20px !important;
+        width: 40px !important;
+        height: 40px !important;
+        top: 25px !important;
+        left: 15px !important;
     }
 
     .planeta2 {
-        /* Ocultado para que la pantalla del celular no se sature de elementos */
         display: none !important; 
     }
 }
