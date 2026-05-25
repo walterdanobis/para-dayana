@@ -442,3 +442,82 @@ button:hover {
 
   pointer-events: none;
 }
+
+/* =======================================================
+   RESPONSIVO: Ajustes especiales para Celulares (Mobile) - CORREGIDO
+   ======================================================= */
+@media (max-width: 768px) {
+    
+    body {
+        overflow-x: hidden;
+        /* Cambiamos a columna para que la imagen y la tarjeta se apilen una abajo de la otra */
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        height: auto; /* Permite que la pantalla crezca a lo alto si es necesario */
+        min-height: 100vh;
+        padding: 20px 10px;
+        box-sizing: border-box;
+    }
+
+    /* --- Ajuste de la Tarjeta --- */
+    .card {
+        width: 90% !important; 
+        max-width: 350px;
+        margin: 10px auto; 
+        padding: 25px 20px !important; 
+        box-sizing: border-box;
+        /* Nos aseguramos de que la tarjeta se renderice por encima de las estrellas */
+        z-index: 10 !important; 
+    }
+
+    .card h1 {
+        font-size: 1.8rem !important; 
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 0.95rem !important; 
+        line-height: 1.5; 
+    }
+
+    .card button {
+        width: 100%; 
+        padding: 12px 20px !important;
+        font-size: 1rem !important;
+    }
+
+    /* --- Ajuste de la Imagen (Anime-girl) --- */
+    .anime-girl {
+        width: 140px !important; /* Un tamaño ideal para pantallas chicas */
+        height: auto !important;
+        /* La cambiamos a absolute pero fija abajo a la derecha de forma sutil 
+           para que no estorbe la lectura de la tarjeta */
+        position: absolute !important; 
+        bottom: 10px !important;
+        right: 10px !important;
+        opacity: 0.4; /* Le bajamos un poco la opacidad para que actúe como fondo y no tape el texto */
+        z-index: 1 !important;
+    }
+
+    /* --- Ajustes de Elementos del Fondo (Luna y Planetas) --- */
+    .luna {
+        width: 70px !important;
+        height: 70px !important;
+        top: 20px !important;
+        right: 20px !important;
+    }
+
+    .planeta1 {
+        width: 45px !important;
+        height: 45px !important;
+        bottom: 40px !important;
+        left: 20px !important;
+    }
+
+    .planeta2 {
+        /* Ocultado para que la pantalla del celular no se sature de elementos */
+        display: none !important; 
+    }
+}
